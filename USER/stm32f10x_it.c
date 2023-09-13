@@ -124,7 +124,8 @@ void EXTI02_IRQHandler(void)
 	if(EXTI_GetITStatus(EXTI02_INT_EXTI_LINE) != RESET) 
 	{
 		LEDC13_TOGGLE;
-		LCD_Clear(BLACK);
+		TIM_Cmd(GENERAL_TIM, ENABLE);
+		Chinese_Font_test();
     //清除中断标志位
 		EXTI_ClearITPendingBit(EXTI02_INT_EXTI_LINE);     
 	}  

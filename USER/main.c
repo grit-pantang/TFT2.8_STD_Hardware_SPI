@@ -52,8 +52,10 @@ int main(void)
 	SystemInit();//初始化RCC 设置系统主频为72MHZ
 	delay_init(72);	     //延时初始化
 	LCD_Init();	   //液晶屏初始化
+//	LCD01_Init();	   //液晶屏初始化
 	LED_Init();
 	EXTI_Key_Config();
+//	LCD01_Clear(BLACK);
 	LCD_Clear(BLACK);
 	GENERAL_TIM_Init();
   //循环测试

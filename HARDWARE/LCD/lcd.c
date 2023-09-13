@@ -55,6 +55,14 @@ u16 DeviceCode;
  * @parameters :data:Command value to be written
  * @retvalue   :None
 ******************************************************************************/
+void LCD01_WR_REG(u8 data)
+{ 
+   LCD01_CS_CLR;     
+	 LCD01_RS_CLR;	  
+   SPI_WriteByte(SPI1,data);
+   LCD01_CS_SET;	
+}
+
 void LCD_WR_REG(u8 data)
 { 
    LCD_CS_CLR;     
@@ -70,6 +78,14 @@ void LCD_WR_REG(u8 data)
  * @parameters :data:data value to be written
  * @retvalue   :None
 ******************************************************************************/
+void LCD01_WR_DATA(u8 data)
+{
+   LCD01_CS_CLR;
+	 LCD01_RS_SET;
+   SPI_WriteByte(SPI1,data);
+   LCD01_CS_SET;
+}
+
 void LCD_WR_DATA(u8 data)
 {
    LCD_CS_CLR;
@@ -111,6 +127,14 @@ void LCD_WriteRAM_Prepare(void)
  * @parameters :Data:Data to be written
  * @retvalue   :None
 ******************************************************************************/	 
+void Lcd01_WriteData_16Bit(u16 Data)
+{	
+   LCD01_CS_CLR;
+   LCD01_RS_SET;
+   SPI_WriteByte(SPI1,Data>>8);
+	 SPI_WriteByte(SPI1,Data);
+   LCD01_CS_SET;
+}
 void Lcd_WriteData_16Bit(u16 Data)
 {	
    LCD_CS_CLR;
@@ -119,6 +143,7 @@ void Lcd_WriteData_16Bit(u16 Data)
 	 SPI_WriteByte(SPI2,Data);
    LCD_CS_SET;
 }
+
 
 /*****************************************************************************
  * @name       :void LCD_DrawPoint(u16 x,u16 y)
@@ -141,6 +166,22 @@ void LCD_DrawPoint(u16 x,u16 y)
  * @parameters :color:Filled color
  * @retvalue   :None
 ******************************************************************************/	
+void LCD01_Clear(u16 Color)
+{
+  unsigned int i,m;  
+	LCD_SetWindows(0,0,lcddev.width-1,lcddev.height-1);   
+	LCD01_CS_CLR;
+	LCD01_RS_SET;
+	for(i=0;i<lcddev.height;i++)
+	{
+    for(m=0;m<lcddev.width;m++)
+    {	
+			Lcd_WriteData_16Bit(Color);
+		}
+	}
+	 LCD01_CS_SET;
+} 
+
 void LCD_Clear(u16 Color)
 {
   unsigned int i,m;  
@@ -164,6 +205,16 @@ void LCD_Clear(u16 Color)
  * @parameters :None
  * @retvalue   :None
 ******************************************************************************/	
+void LCD01_GPIOInit(void)
+{
+	GPIO_InitTypeDef  GPIO_InitStructure;	      
+	RCC_APB2PeriphClockCmd( RCC_APB2Periph_GPIOA ,ENABLE);	//使能GPIOA时钟
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_1| GPIO_Pin_2| GPIO_Pin_3| GPIO_Pin_4; //GPIOA1,2,3,4
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;   //推挽输出
+	GPIO_Init(GPIOA, &GPIO_InitStructure);//初始化
+}
+
 void LCD_GPIOInit(void)
 {
 	GPIO_InitTypeDef  GPIO_InitStructure;	      
@@ -181,6 +232,13 @@ void LCD_GPIOInit(void)
  * @parameters :None
  * @retvalue   :None
 ******************************************************************************/	
+void LCD01_RESET(void)
+{
+	LCD01_RST_CLR;
+	delay_ms(100);	
+	LCD01_RST_SET;
+	delay_ms(50);
+}
 void LCD_RESET(void)
 {
 	LCD_RST_CLR;
@@ -196,9 +254,113 @@ void LCD_RESET(void)
  * @parameters :None
  * @retvalue   :None
 ******************************************************************************/	 	 
+void LCD01_Init(void)
+{  
+	SPI01_Init(); //硬件SPI2初始化
+	LCD01_GPIOInit();//LCD GPIO初始化										 
+ 	LCD01_RESET(); //LCD 复位
+//*************2.4inch ILI9341初始化**********//	
+	LCD01_WR_REG(0xCF);  
+	LCD01_WR_DATA(0x00); 
+	LCD01_WR_DATA(0xD9); //0xC1 
+	LCD01_WR_DATA(0X30); 
+	LCD01_WR_REG(0xED);  
+	LCD01_WR_DATA(0x64); 
+	LCD01_WR_DATA(0x03); 
+	LCD01_WR_DATA(0X12); 
+	LCD01_WR_DATA(0X81); 
+	LCD01_WR_REG(0xE8);  
+	LCD01_WR_DATA(0x85); 
+	LCD01_WR_DATA(0x10); 
+	LCD01_WR_DATA(0x7A); 
+	LCD01_WR_REG(0xCB);  
+	LCD01_WR_DATA(0x39); 
+	LCD01_WR_DATA(0x2C); 
+	LCD01_WR_DATA(0x00); 
+	LCD01_WR_DATA(0x34); 
+	LCD01_WR_DATA(0x02); 
+	LCD01_WR_REG(0xF7);  
+	LCD01_WR_DATA(0x20); 
+	LCD01_WR_REG(0xEA);  
+	LCD01_WR_DATA(0x00); 
+	LCD01_WR_DATA(0x00); 
+	LCD01_WR_REG(0xC0);    //Power control 
+	LCD01_WR_DATA(0x1B);   //VRH[5:0] 
+	LCD01_WR_REG(0xC1);    //Power control 
+	LCD01_WR_DATA(0x12);   //SAP[2:0];BT[3:0] 0x01
+	LCD01_WR_REG(0xC5);    //VCM control 
+	LCD01_WR_DATA(0x08); 	 //30
+	LCD01_WR_DATA(0x26); 	 //30
+	LCD01_WR_REG(0xC7);    //VCM control2 
+	LCD01_WR_DATA(0XB7); 
+	LCD01_WR_REG(0x36);    // Memory Access Control 
+	LCD01_WR_DATA(0x08); 
+	LCD01_WR_REG(0x3A);   
+	LCD01_WR_DATA(0x55); 
+	LCD01_WR_REG(0xB1);   
+	LCD01_WR_DATA(0x00);   
+	LCD01_WR_DATA(0x1A); 
+	LCD01_WR_REG(0xB6);    // Display Function Control 
+	LCD01_WR_DATA(0x0A); 
+	LCD01_WR_DATA(0xA2); 
+	LCD01_WR_REG(0xF2);    // 3Gamma Function Disable 
+	LCD01_WR_DATA(0x00); 
+	LCD01_WR_REG(0x26);    //Gamma curve selected 
+	LCD01_WR_DATA(0x01); 
+	LCD01_WR_REG(0xE0);    //Set Gamma 
+	LCD01_WR_DATA(0x0F); 
+	LCD01_WR_DATA(0x1D); 
+	LCD01_WR_DATA(0x1A); 
+	LCD01_WR_DATA(0x0A); 
+	LCD01_WR_DATA(0x0D); 
+	LCD01_WR_DATA(0x07); 
+	LCD01_WR_DATA(0x49); 
+	LCD01_WR_DATA(0X66); 
+	LCD01_WR_DATA(0x3B); 
+	LCD01_WR_DATA(0x07); 
+	LCD01_WR_DATA(0x11); 
+	LCD01_WR_DATA(0x01); 
+	LCD01_WR_DATA(0x09); 
+	LCD01_WR_DATA(0x05); 
+	LCD01_WR_DATA(0x04); 		 
+	LCD01_WR_REG(0XE1);    //Set Gamma 
+	LCD01_WR_DATA(0x00); 
+	LCD01_WR_DATA(0x18); 
+	LCD01_WR_DATA(0x1D); 
+	LCD01_WR_DATA(0x02); 
+	LCD01_WR_DATA(0x0F); 
+	LCD01_WR_DATA(0x04); 
+	LCD01_WR_DATA(0x36); 
+	LCD01_WR_DATA(0x13); 
+	LCD01_WR_DATA(0x4C); 
+	LCD01_WR_DATA(0x07); 
+	LCD01_WR_DATA(0x13); 
+	LCD01_WR_DATA(0x0F); 
+	LCD01_WR_DATA(0x2E); 
+	LCD01_WR_DATA(0x2F); 
+	LCD01_WR_DATA(0x05); 
+	LCD01_WR_REG(0x2B); 
+	LCD01_WR_DATA(0x00);
+	LCD01_WR_DATA(0x00);
+	LCD01_WR_DATA(0x01);
+	LCD01_WR_DATA(0x3f);
+	LCD01_WR_REG(0x2A); 
+	LCD01_WR_DATA(0x00);
+	LCD01_WR_DATA(0x00);
+	LCD01_WR_DATA(0x00);
+	LCD01_WR_DATA(0xef);	 
+	LCD01_WR_REG(0x11); //Exit Sleep
+	delay_ms(120);
+	LCD01_WR_REG(0x29); //display on
+
+  LCD01_direction(USE_HORIZONTAL);//设置LCD显示方向
+	LCD01_LED=1;//点亮背光	 
+	LCD01_Clear(WHITE);//清全屏白色
+}
+//SPI02
 void LCD_Init(void)
 {  
-	SPI2_Init(); //硬件SPI2初始化
+	SPI02_Init(); //硬件SPI2初始化
 	LCD_GPIOInit();//LCD GPIO初始化										 
  	LCD_RESET(); //LCD 复位
 //*************2.4inch ILI9341初始化**********//	
@@ -298,8 +460,7 @@ void LCD_Init(void)
   LCD_direction(USE_HORIZONTAL);//设置LCD显示方向
 	LCD_LED=1;//点亮背光	 
 	LCD_Clear(WHITE);//清全屏白色
-}
- 
+} 
 /*****************************************************************************
  * @name       :void LCD_SetWindows(u16 xStar, u16 yStar,u16 xEnd,u16 yEnd)
  * @date       :2018-08-09 
@@ -350,6 +511,36 @@ void LCD_SetCursor(u16 Xpos, u16 Ypos)
 													3-270 degree
  * @retvalue   :None
 ******************************************************************************/ 
+void LCD01_direction(u8 direction)
+{ 
+			lcddev.setxcmd=0x2A;
+			lcddev.setycmd=0x2B;
+			lcddev.wramcmd=0x2C;
+	switch(direction){		  
+		case 0:						 	 		
+			lcddev.width=LCD_W;
+			lcddev.height=LCD_H;		
+			LCD_WriteReg(0x36,(1<<3)|(0<<6)|(0<<7));//BGR==1,MY==0,MX==0,MV==0
+		break;
+		case 1:
+			lcddev.width=LCD_H;
+			lcddev.height=LCD_W;
+			LCD_WriteReg(0x36,(1<<3)|(0<<7)|(1<<6)|(1<<5));//BGR==1,MY==1,MX==0,MV==1
+		break;
+		case 2:						 	 		
+			lcddev.width=LCD_W;
+			lcddev.height=LCD_H;	
+			LCD_WriteReg(0x36,(1<<3)|(1<<6)|(1<<7));//BGR==1,MY==0,MX==0,MV==0
+		break;
+		case 3:
+			lcddev.width=LCD_H;
+			lcddev.height=LCD_W;
+			LCD_WriteReg(0x36,(1<<3)|(1<<7)|(1<<5));//BGR==1,MY==1,MX==0,MV==1
+		break;	
+		default:break;
+	}		
+}	
+
 void LCD_direction(u8 direction)
 { 
 			lcddev.setxcmd=0x2A;
