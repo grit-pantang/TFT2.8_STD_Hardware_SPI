@@ -102,12 +102,6 @@ void LCD_WR_DATA(u8 data)
                 LCD_RegValue:Data to be written
  * @retvalue   :None
 ******************************************************************************/
-void LCD01_WriteReg(u8 LCD_Reg, u16 LCD_RegValue)
-{	
-	LCD01_WR_REG(LCD_Reg);  
-	LCD01_WR_DATA(LCD_RegValue);	    		 
-}	 
-
 void LCD_WriteReg(u8 LCD_Reg, u16 LCD_RegValue)
 {	
 	LCD_WR_REG(LCD_Reg);  
@@ -124,12 +118,7 @@ void LCD_WriteReg(u8 LCD_Reg, u16 LCD_RegValue)
 void LCD_WriteRAM_Prepare(void)
 {
 	LCD_WR_REG(lcddev.wramcmd);
-}	
-void LCD01_WriteRAM_Prepare(void)
-{
-	LCD01_WR_REG(lcddev.wramcmd);
-}	
-
+}	 
 
 /*****************************************************************************
  * @name       :void Lcd_WriteData_16Bit(u16 Data)
@@ -146,15 +135,6 @@ void Lcd01_WriteData_16Bit(u16 Data)
 	 SPI_WriteByte(SPI1,Data);
    LCD01_CS_SET;
 }
-void Lcd_WriteData01_16Bit(u16 Data)
-{	
-   LCD01_CS_CLR;
-   LCD01_RS_SET;  
-   SPI_WriteByte(SPI1,Data>>8);
-	 SPI_WriteByte(SPI1,Data);
-   LCD01_CS_SET;
-}
-
 void Lcd_WriteData_16Bit(u16 Data)
 {	
    LCD_CS_CLR;
@@ -189,14 +169,14 @@ void LCD_DrawPoint(u16 x,u16 y)
 void LCD01_Clear(u16 Color)
 {
   unsigned int i,m;  
-	LCD01_SetWindows(0,0,lcddev.width-1,lcddev.height-1);   
+	LCD_SetWindows(0,0,lcddev.width-1,lcddev.height-1);   
 	LCD01_CS_CLR;
 	LCD01_RS_SET;
 	for(i=0;i<lcddev.height;i++)
 	{
     for(m=0;m<lcddev.width;m++)
     {	
-			Lcd01_WriteData_16Bit(Color);
+			Lcd_WriteData_16Bit(Color);
 		}
 	}
 	 LCD01_CS_SET;
@@ -491,23 +471,6 @@ void LCD_Init(void)
 								yEnd:the endning y coordinate of the LCD display window
  * @retvalue   :None
 ******************************************************************************/ 
-void LCD01_SetWindows(u16 xStar, u16 yStar,u16 xEnd,u16 yEnd)
-{	
-	LCD01_WR_REG(lcddev.setxcmd);	
-	LCD01_WR_DATA(xStar>>8);
-	LCD01_WR_DATA(0x00FF&xStar);		
-	LCD01_WR_DATA(xEnd>>8);
-	LCD01_WR_DATA(0x00FF&xEnd);
-
-	LCD01_WR_REG(lcddev.setycmd);	
-	LCD01_WR_DATA(yStar>>8);
-	LCD01_WR_DATA(0x00FF&yStar);		
-	LCD01_WR_DATA(yEnd>>8);
-	LCD01_WR_DATA(0x00FF&yEnd);
-
-	LCD01_WriteRAM_Prepare();	//¿ªÊ¼Ð´ÈëGRAM			
-}  
-
 void LCD_SetWindows(u16 xStar, u16 yStar,u16 xEnd,u16 yEnd)
 {	
 	LCD_WR_REG(lcddev.setxcmd);	
@@ -557,22 +520,22 @@ void LCD01_direction(u8 direction)
 		case 0:						 	 		
 			lcddev.width=LCD_W;
 			lcddev.height=LCD_H;		
-			LCD01_WriteReg(0x36,(1<<3)|(0<<6)|(0<<7));//BGR==1,MY==0,MX==0,MV==0
+			LCD_WriteReg(0x36,(1<<3)|(0<<6)|(0<<7));//BGR==1,MY==0,MX==0,MV==0
 		break;
 		case 1:
 			lcddev.width=LCD_H;
 			lcddev.height=LCD_W;
-			LCD01_WriteReg(0x36,(1<<3)|(0<<7)|(1<<6)|(1<<5));//BGR==1,MY==1,MX==0,MV==1
+			LCD_WriteReg(0x36,(1<<3)|(0<<7)|(1<<6)|(1<<5));//BGR==1,MY==1,MX==0,MV==1
 		break;
 		case 2:						 	 		
 			lcddev.width=LCD_W;
 			lcddev.height=LCD_H;	
-			LCD01_WriteReg(0x36,(1<<3)|(1<<6)|(1<<7));//BGR==1,MY==0,MX==0,MV==0
+			LCD_WriteReg(0x36,(1<<3)|(1<<6)|(1<<7));//BGR==1,MY==0,MX==0,MV==0
 		break;
 		case 3:
 			lcddev.width=LCD_H;
 			lcddev.height=LCD_W;
-			LCD01_WriteReg(0x36,(1<<3)|(1<<7)|(1<<5));//BGR==1,MY==1,MX==0,MV==1
+			LCD_WriteReg(0x36,(1<<3)|(1<<7)|(1<<5));//BGR==1,MY==1,MX==0,MV==1
 		break;	
 		default:break;
 	}		

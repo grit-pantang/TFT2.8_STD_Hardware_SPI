@@ -55,7 +55,7 @@ int main(void)
 	LCD01_Init();	   //“∫æß∆¡01≥ı ºªØ
 	LED_Init();
 	EXTI_Key_Config();
-	LCD01_Clear(YELLOW);
+	LCD01_Clear(BLACK);
 	LCD_Clear(BLACK);
 	GENERAL_TIM_Init();
   //—≠ª∑≤‚ ‘

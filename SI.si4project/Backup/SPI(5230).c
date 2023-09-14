@@ -100,7 +100,7 @@ void SPI01_Init(void)
 	GPIO_Init(GPIOA, &GPIO_InitStructure01);  
 	
 	//SPI1配置选项
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SPI1,ENABLE);
+	RCC_APB1PeriphClockCmd(RCC_APB2Periph_SPI1,ENABLE);
 	   
 	SPI_InitStructure01.SPI_Direction = SPI_Direction_2Lines_FullDuplex;
 	SPI_InitStructure01.SPI_Mode = SPI_Mode_Master;
@@ -134,7 +134,7 @@ void SPI02_Init(void)
 	GPIO_Init(GPIOB, &GPIO_InitStructure);  
 	
 	//SPI2配置选项
-	RCC_APB1PeriphClockCmd(RCC_APB1Periph_SPI2,ENABLE);
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_SPI2 ,ENABLE);
 	   
 	SPI_InitStructure.SPI_Direction = SPI_Direction_2Lines_FullDuplex;
 	SPI_InitStructure.SPI_Mode = SPI_Mode_Master;

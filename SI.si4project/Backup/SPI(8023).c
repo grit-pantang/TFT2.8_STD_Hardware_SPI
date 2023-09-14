@@ -134,7 +134,7 @@ void SPI02_Init(void)
 	GPIO_Init(GPIOB, &GPIO_InitStructure);  
 	
 	//SPI2≈‰÷√—°œÓ
-	RCC_APB1PeriphClockCmd(RCC_APB1Periph_SPI2,ENABLE);
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_SPI2 ,ENABLE);
 	   
 	SPI_InitStructure.SPI_Direction = SPI_Direction_2Lines_FullDuplex;
 	SPI_InitStructure.SPI_Mode = SPI_Mode_Master;
