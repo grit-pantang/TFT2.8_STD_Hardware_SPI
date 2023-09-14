@@ -78,7 +78,7 @@ int main(void)
         //如果不带触摸，或者不需要触摸功能，请注释掉下面触摸屏测试项
 //		Touch_Test();		//触摸屏手写测试
 
-				//TFT-SPI2
+
         if(time >= 5000)    /* 5000 * 1 ms = 1s 时间到 */
         {
             time = 0;
@@ -86,12 +86,11 @@ int main(void)
             LCD_Clear(BLACK);
             TIM_Cmd(GENERAL_TIM, DISABLE);
         }
-				//TFT01-SPI1
         if(time01 >= 5000)    /* 5000 * 1 ms = 1s 时间到 */
         {
             time01 = 0;
             /* LED1 取反 */
-            LCD01_Clear(BLACK);
+            LCD01_Clear(YELLOW);
             TIM_Cmd(GENERAL_TIM, DISABLE);
         }
     }

@@ -12,7 +12,7 @@
 #define EXTI01_INT_EXTI_PORTSOURCE   GPIO_PortSourceGPIOB
 #define EXTI01_INT_EXTI_PINSOURCE    GPIO_PinSource7
 #define EXTI01_INT_EXTI_LINE         EXTI_Line7
-#define EXTI01_INT_EXTI_IRQ          EXTI9_5_IRQn
+#define EXTI01_INT_EXTI_IRQ          EXTI7_IRQn
 
 #define EXTI01_IRQHandler            EXTI9_5_IRQHandler
 
@@ -20,13 +20,13 @@
 
 #define EXTI02_INT_GPIO_PORT         GPIOB
 #define EXTI02_INT_GPIO_CLK          (RCC_APB2Periph_GPIOB|RCC_APB2Periph_AFIO)
-#define EXTI02_INT_GPIO_PIN          GPIO_Pin_6
+#define EXTI02_INT_GPIO_PIN          GPIO_Pin_4
 #define EXTI02_INT_EXTI_PORTSOURCE   GPIO_PortSourceGPIOB
-#define EXTI02_INT_EXTI_PINSOURCE    GPIO_PinSource6
-#define EXTI02_INT_EXTI_LINE         EXTI_Line6
-#define EXTI02_INT_EXTI_IRQ          EXTI9_5_IRQn
+#define EXTI02_INT_EXTI_PINSOURCE    GPIO_PinSource4
+#define EXTI02_INT_EXTI_LINE         EXTI_Line4
+#define EXTI02_INT_EXTI_IRQ          EXTI4_IRQn
 
-#define EXTI02_IRQHandler            EXTI9_5_IRQHandler
+#define EXTI02_IRQHandler            EXTI4_IRQHandler
 
 void EXTI_Key_Config(void);
 

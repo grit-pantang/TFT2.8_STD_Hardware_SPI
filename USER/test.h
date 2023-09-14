@@ -44,6 +44,8 @@ void Test_Circle(void);
 void Test_Triangle(void);
 void English_Font_test(void);
 void Chinese_Font_test(void);
+void Chinese_Font_test01(void);
+
 void Pic_test(void);
 void Load_Drow_Dialog(void);
 void Touch_Test(void);

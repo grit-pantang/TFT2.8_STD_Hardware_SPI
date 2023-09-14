@@ -146,7 +146,11 @@ void LCD_DisplayOff(void);
 void LCD01_Clear(u16 Color);
 void LCD_Clear(u16 Color);
 void LCD_SetCursor(u16 Xpos, u16 Ypos);
+void LCD01_SetCursor(u16 Xpos, u16 Ypos);
+
 void LCD_DrawPoint(u16 x, u16 y); //»­µã
+void LCD01_DrawPoint(u16 x, u16 y); //»­µã
+
 u16  LCD_ReadPoint(u16 x, u16 y); //¶Áµã
 void LCD_DrawLine(u16 x1, u16 y1, u16 x2, u16 y2);
 void LCD_DrawRectangle(u16 x1, u16 y1, u16 x2, u16 y2);

@@ -173,12 +173,6 @@ void Lcd_WriteData_16Bit(u16 Data)
                 y:the y coordinate of the pixel
  * @retvalue   :None
 ******************************************************************************/	
-void LCD01_DrawPoint(u16 x,u16 y)
-{
-	LCD01_SetCursor(x,y);//设置光标位置 
-	Lcd_WriteData01_16Bit(POINT_COLOR); 
-}
-
 void LCD_DrawPoint(u16 x,u16 y)
 {
 	LCD_SetCursor(x,y);//设置光标位置 
@@ -539,11 +533,6 @@ void LCD_SetWindows(u16 xStar, u16 yStar,u16 xEnd,u16 yEnd)
 								Ypos:the  y coordinate of the pixel
  * @retvalue   :None
 ******************************************************************************/ 
-void LCD01_SetCursor(u16 Xpos, u16 Ypos)
-{	  	    			
-	LCD01_SetWindows(Xpos,Ypos,Xpos,Ypos);	
-} 
-
 void LCD_SetCursor(u16 Xpos, u16 Ypos)
 {	  	    			
 	LCD_SetWindows(Xpos,Ypos,Xpos,Ypos);	

@@ -103,12 +103,14 @@ void EXTI01_IRQHandler(void)
 	{
 		LEDC13_TOGGLE;
 		TIM_Cmd(GENERAL_TIM, ENABLE);
-		Chinese_Font_test01();
+		Chinese_Font_test();
     //清除中断标志位
 		EXTI_ClearITPendingBit(EXTI01_INT_EXTI_LINE);     
-	} 
-		
-	//确保是否产生了EXTI Line中断
+	}  
+}
+void EXTI02_IRQHandler(void)
+{
+  //确保是否产生了EXTI Line中断
 	if(EXTI_GetITStatus(EXTI02_INT_EXTI_LINE) != RESET) 
 	{
 		LEDC13_TOGGLE;
@@ -118,18 +120,6 @@ void EXTI01_IRQHandler(void)
 		EXTI_ClearITPendingBit(EXTI02_INT_EXTI_LINE);     
 	}  
 }
-//void EXTI02_IRQHandler(void)
-//{
-//  //确保是否产生了EXTI Line中断
-//	if(EXTI_GetITStatus(EXTI02_INT_EXTI_LINE) != RESET) 
-//	{
-//		LEDC13_TOGGLE;
-//		TIM_Cmd(GENERAL_TIM, ENABLE);
-//		Chinese_Font_test();
-//    //清除中断标志位
-//		EXTI_ClearITPendingBit(EXTI02_INT_EXTI_LINE);     
-//	}  
-//}
 
 /******************************************************************************/
 /*                 STM32F10x Peripherals Interrupt Handlers                   */

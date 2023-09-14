@@ -91,7 +91,7 @@ int main(void)
         {
             time01 = 0;
             /* LED1 È¡·´ */
-            LCD01_Clear(BLACK);
+//            LCD01_Clear(BLACK);
             TIM_Cmd(GENERAL_TIM, DISABLE);
         }
     }

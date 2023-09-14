@@ -413,7 +413,7 @@ void LCD01_ShowChar(u16 x,u16 y,u16 fc, u16 bc, u8 num,u8 size,u8 mode)
 		}
 	}
 	POINT_COLOR=colortemp;	
-	LCD01_SetWindows(0,0,lcddev.width-1,lcddev.height-1);//恢复窗口为全屏    	   	 	  
+	LCD_SetWindows(0,0,lcddev.width-1,lcddev.height-1);//恢复窗口为全屏    	   	 	  
 }
 
 void LCD_ShowChar(u16 x,u16 y,u16 fc, u16 bc, u8 num,u8 size,u8 mode)
@@ -538,53 +538,6 @@ void LCD_ShowNum(u16 x,u16 y,u32 num,u8 len,u8 size)
 								mode:0-no overlying,1-overlying
  * @retvalue   :None
 ******************************************************************************/ 
-void GUI01_DrawFont16(u16 x, u16 y, u16 fc, u16 bc, u8 *s,u8 mode)
-{
-	u8 i,j;
-	u16 k;
-	u16 HZnum;
-	u16 x0=x;
-	HZnum=sizeof(tfont16)/sizeof(typFNT_GB16);	//自动统计汉字数目
-	
-			
-	for (k=0;k<HZnum;k++) 
-	{
-	  if ((tfont16[k].Index[0]==*(s))&&(tfont16[k].Index[1]==*(s+1)))
-	  { 	LCD01_SetWindows(x,y,x+16-1,y+16-1);
-		    for(i=0;i<16*2;i++)
-		    {
-				for(j=0;j<8;j++)
-		    	{	
-					if(!mode) //非叠加方式
-					{
-						if(tfont16[k].Msk[i]&(0x80>>j))	Lcd01_WriteData_16Bit(fc);
-						else Lcd_WriteData01_16Bit(bc);
-					}
-					else
-					{
-						POINT_COLOR=fc;
-						if(tfont16[k].Msk[i]&(0x80>>j))	LCD01_DrawPoint(x,y);//画一个点
-						x++;
-						if((x-x0)==16)
-						{
-							x=x0;
-							y++;
-							break;
-						}
-					}
-
-				}
-				
-			}
-			
-			
-		}				  	
-		continue;  //查找到对应点阵字库立即退出，防止多个汉字重复取模带来影响
-	}
-
-	LCD01_SetWindows(0,0,lcddev.width-1,lcddev.height-1);//恢复窗口为全屏  
-} 
-
 void GUI_DrawFont16(u16 x, u16 y, u16 fc, u16 bc, u8 *s,u8 mode)
 {
 	u8 i,j;
@@ -644,50 +597,6 @@ void GUI_DrawFont16(u16 x, u16 y, u16 fc, u16 bc, u8 *s,u8 mode)
 								mode:0-no overlying,1-overlying
  * @retvalue   :None
 ******************************************************************************/ 
-void GUI01_DrawFont24(u16 x, u16 y, u16 fc, u16 bc, u8 *s,u8 mode)
-{
-	u8 i,j;
-	u16 k;
-	u16 HZnum;
-	u16 x0=x;
-	HZnum=sizeof(tfont24)/sizeof(typFNT_GB24);	//自动统计汉字数目
-		
-			for (k=0;k<HZnum;k++) 
-			{
-			  if ((tfont24[k].Index[0]==*(s))&&(tfont24[k].Index[1]==*(s+1)))
-			  { 	LCD01_SetWindows(x,y,x+24-1,y+24-1);
-				    for(i=0;i<24*3;i++)
-				    {
-							for(j=0;j<8;j++)
-							{
-								if(!mode) //非叠加方式
-								{
-									if(tfont24[k].Msk[i]&(0x80>>j))	Lcd_WriteData01_16Bit(fc);
-									else Lcd_WriteData01_16Bit(bc);
-								}
-							else
-							{
-								POINT_COLOR=fc;
-								if(tfont24[k].Msk[i]&(0x80>>j))	LCD01_DrawPoint(x,y);//画一个点
-								x++;
-								if((x-x0)==24)
-								{
-									x=x0;
-									y++;
-									break;
-								}
-							}
-						}
-					}
-					
-					
-				}				  	
-				continue;  //查找到对应点阵字库立即退出，防止多个汉字重复取模带来影响
-			}
-
-	LCD01_SetWindows(0,0,lcddev.width-1,lcddev.height-1);//恢复窗口为全屏  
-}
-
 void GUI_DrawFont24(u16 x, u16 y, u16 fc, u16 bc, u8 *s,u8 mode)
 {
 	u8 i,j;
@@ -743,50 +652,7 @@ void GUI_DrawFont24(u16 x, u16 y, u16 fc, u16 bc, u8 *s,u8 mode)
 								s:the start address of the Chinese character
 								mode:0-no overlying,1-overlying
  * @retvalue   :None
-******************************************************************************/
-void GUI01_DrawFont32(u16 x, u16 y, u16 fc, u16 bc, u8 *s,u8 mode)
-{
-	u8 i,j;
-	u16 k;
-	u16 HZnum;
-	u16 x0=x;
-	HZnum=sizeof(tfont32)/sizeof(typFNT_GB32);	//自动统计汉字数目
-	for (k=0;k<HZnum;k++) 
-			{
-			  if ((tfont32[k].Index[0]==*(s))&&(tfont32[k].Index[1]==*(s+1)))
-			  { 	LCD01_SetWindows(x,y,x+32-1,y+32-1);
-				    for(i=0;i<32*4;i++)
-				    {
-						for(j=0;j<8;j++)
-				    	{
-							if(!mode) //非叠加方式
-							{
-								if(tfont32[k].Msk[i]&(0x80>>j))	Lcd_WriteData01_16Bit(fc);
-								else Lcd_WriteData01_16Bit(bc);
-							}
-							else
-							{
-								POINT_COLOR=fc;
-								if(tfont32[k].Msk[i]&(0x80>>j))	LCD01_DrawPoint(x,y);//画一个点
-								x++;
-								if((x-x0)==32)
-								{
-									x=x0;
-									y++;
-									break;
-								}
-							}
-						}
-					}
-					
-					
-				}				  	
-				continue;  //查找到对应点阵字库立即退出，防止多个汉字重复取模带来影响
-			}
-	
-	LCD01_SetWindows(0,0,lcddev.width-1,lcddev.height-1);//恢复窗口为全屏  
-} 
-
+******************************************************************************/ 
 void GUI_DrawFont32(u16 x, u16 y, u16 fc, u16 bc, u8 *s,u8 mode)
 {
 	u8 i,j;
@@ -884,7 +750,7 @@ void Show_Str01(u16 x, u16 y, u16 fc, u16 bc, u8 *str,u8 size,u8 mode)
 			return;  
             bHz=0;//有汉字库    
 			if(size==32)
-			GUI01_DrawFont32(x,y,fc,bc,str,mode);	 	
+			GUI_DrawFont32(x,y,fc,bc,str,mode);	 	
 			else if(size==24)
 			GUI_DrawFont24(x,y,fc,bc,str,mode);	
 			else

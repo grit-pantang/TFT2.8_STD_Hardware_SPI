@@ -216,20 +216,6 @@ void Test_Triangle(void)
  * @parameters :None
  * @retvalue   :None
 ******************************************************************************/
-void Chinese_Font_test01(void)
-{	
-	
-//	DrawTestPage("测试6:中文显示测试");
-	LCD01_direction(3);
-	LCD01_Clear(BLACK);
-//	Show_Str(10,30,BLUE,YELLOW,"16X16:讯铭信息科技有限公司欢迎您",16,0);
-//	Show_Str(10,50,BLUE,YELLOW,"16X16:LiangHaoCai",16,0);
-//	Show_Str(10,70,BLUE,YELLOW,"24X24:广州市中文测试",24,1);
-//	Show_Str(10,100,BLUE,YELLOW,"32X32:字体测试",32,1);
-	Show_Str01(10,100,BLUE,YELLOW,"PB7-01交叉路口注意安全",32,1);
-	delay_ms(1200);
-}
-
 void Chinese_Font_test(void)
 {	
 	
@@ -240,7 +226,7 @@ void Chinese_Font_test(void)
 //	Show_Str(10,50,BLUE,YELLOW,"16X16:LiangHaoCai",16,0);
 //	Show_Str(10,70,BLUE,YELLOW,"24X24:广州市中文测试",24,1);
 //	Show_Str(10,100,BLUE,YELLOW,"32X32:字体测试",32,1);
-	Show_Str(10,100,BLUE,YELLOW,"PB6-02交叉路口注意安全",32,1);
+	Show_Str(10,100,BLUE,YELLOW,"交叉路口注意安全",32,1);
 	delay_ms(1200);
 }
 
