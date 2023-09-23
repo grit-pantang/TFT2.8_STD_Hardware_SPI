@@ -871,7 +871,6 @@ void GUI01_DrawFont64(u16 x, u16 y, u16 fc, u16 bc, u8 *s,u8 mode)
 	
 	LCD01_SetWindows(0,0,lcddev.width-1,lcddev.height-1);//»Ö¸´´°¿ÚÎªÈ«ÆÁ  
 } 
-
 /*****************************************************************************
  * @name       :void Show_Str(u16 x, u16 y, u16 fc, u16 bc, u8 *str,u8 size,u8 mode)
  * @date       :2018-08-09 
@@ -929,8 +928,6 @@ void Show_Str01(u16 x, u16 y, u16 fc, u16 bc, u8 *str,u8 size,u8 mode)
 			GUI01_DrawFont32(x,y,fc,bc,str,mode);	 	
 			else if(size==24)
 			GUI_DrawFont24(x,y,fc,bc,str,mode);	
-			else if(size==64)
-			GUI01_DrawFont64(x,y,fc,bc,str,mode);	
 			else
 			GUI_DrawFont16(x,y,fc,bc,str,mode);
 				

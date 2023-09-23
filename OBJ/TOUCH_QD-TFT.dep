@@ -1,5 +1,5 @@
 Dependencies for Project 'TOUCH', Target 'QD-TFT': (DO NOT MODIFY !)
-F (..\USER\GUI.c)(0x6502C63A)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\EXTI -I ..\HARDWARE\WDG -I ..\HARDWARE\TIMER -I ..\HARDWARE\PWM -I ..\HARDWARE\LCD -I ..\HARDWARE\WKUP -I ..\HARDWARE\ADC -I ..\HARDWARE\TSensor -I ..\HARDWARE\IIC -I ..\HARDWARE\24CXX -I ..\HARDWARE\SPI -I ..\HARDWARE\FLASH -I ..\HARDWARE\TOUCH -I ..\HARDWARE\EXIT -I ..\HARDWARE\TIM-I.\RTE\_QD-TFT-I"D:\Program Files\KEIL\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"D:\Program Files\KEIL\Keil\STM32F1xx_DFP\2.3.0\Device\Include"-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\gui.o --omf_browse ..\obj\gui.crf --depend ..\obj\gui.d)
+F (..\USER\GUI.c)(0x650F025B)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\EXTI -I ..\HARDWARE\WDG -I ..\HARDWARE\TIMER -I ..\HARDWARE\PWM -I ..\HARDWARE\LCD -I ..\HARDWARE\WKUP -I ..\HARDWARE\ADC -I ..\HARDWARE\TSensor -I ..\HARDWARE\IIC -I ..\HARDWARE\24CXX -I ..\HARDWARE\SPI -I ..\HARDWARE\FLASH -I ..\HARDWARE\TOUCH -I ..\HARDWARE\EXIT -I ..\HARDWARE\TIM-I.\RTE\_QD-TFT-I"D:\Program Files\KEIL\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"D:\Program Files\KEIL\Keil\STM32F1xx_DFP\2.3.0\Device\Include"-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\gui.o --omf_browse ..\obj\gui.crf --depend ..\obj\gui.d)
 I (..\HARDWARE\LCD\lcd.h)(0x6502C477)
 I (..\SYSTEM\sys\sys.h)(0x5B6BE71E)
 I (..\USER\stm32f10x.h)(0x64F98934)
@@ -31,11 +31,11 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
 I (D:\Program Files\KEIL\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (D:\Program Files\KEIL\ARM\ARMCC\include\string.h)(0x6025237E)
-I (..\HARDWARE\LCD\font.h)(0x64FD9ED1)
-I (..\SYSTEM\delay\delay.h)(0x5F81C588)
-I (..\USER\gui.h)(0x6502C652)
-F (..\USER\main.c)(0x6502C6F7)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\EXTI -I ..\HARDWARE\WDG -I ..\HARDWARE\TIMER -I ..\HARDWARE\PWM -I ..\HARDWARE\LCD -I ..\HARDWARE\WKUP -I ..\HARDWARE\ADC -I ..\HARDWARE\TSensor -I ..\HARDWARE\IIC -I ..\HARDWARE\24CXX -I ..\HARDWARE\SPI -I ..\HARDWARE\FLASH -I ..\HARDWARE\TOUCH -I ..\HARDWARE\EXIT -I ..\HARDWARE\TIM-I.\RTE\_QD-TFT-I"D:\Program Files\KEIL\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"D:\Program Files\KEIL\Keil\STM32F1xx_DFP\2.3.0\Device\Include"-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
-I (..\SYSTEM\delay\delay.h)(0x5F81C588)
+I (..\HARDWARE\LCD\font.h)(0x650EFE0E)
+I (..\SYSTEM\delay\delay.h)(0x650F01E8)
+I (..\USER\gui.h)(0x650EF1EC)
+F (..\USER\main.c)(0x650EEE01)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\EXTI -I ..\HARDWARE\WDG -I ..\HARDWARE\TIMER -I ..\HARDWARE\PWM -I ..\HARDWARE\LCD -I ..\HARDWARE\WKUP -I ..\HARDWARE\ADC -I ..\HARDWARE\TSensor -I ..\HARDWARE\IIC -I ..\HARDWARE\24CXX -I ..\HARDWARE\SPI -I ..\HARDWARE\FLASH -I ..\HARDWARE\TOUCH -I ..\HARDWARE\EXIT -I ..\HARDWARE\TIM-I.\RTE\_QD-TFT-I"D:\Program Files\KEIL\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"D:\Program Files\KEIL\Keil\STM32F1xx_DFP\2.3.0\Device\Include"-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+I (..\SYSTEM\delay\delay.h)(0x650F01E8)
 I (..\USER\stm32f10x.h)(0x64F98934)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (D:\Program Files\KEIL\ARM\ARMCC\include\stdint.h)(0x6025237E)
@@ -67,12 +67,12 @@ I (..\SYSTEM\sys\sys.h)(0x5B6BE71E)
 I (..\HARDWARE\LCD\lcd.h)(0x6502C477)
 I (D:\Program Files\KEIL\ARM\ARMCC\include\stdlib.h)(0x60252374)
 I (..\HARDWARE\TOUCH\touch.h)(0x5F81C671)
-I (..\USER\gui.h)(0x6502C652)
+I (..\USER\gui.h)(0x650EF1EC)
 I (..\USER\test.h)(0x6502C223)
 I (..\HARDWARE\EXIT\bsp_exti.h)(0x6502C0F0)
 I (..\HARDWARE\LED\led.h)(0x64FDE318)
 I (..\HARDWARE\TIM\bsp_GeneralTim.h)(0x63BD17CC)
-F (..\USER\stm32f10x_it.c)(0x6502C4EE)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\EXTI -I ..\HARDWARE\WDG -I ..\HARDWARE\TIMER -I ..\HARDWARE\PWM -I ..\HARDWARE\LCD -I ..\HARDWARE\WKUP -I ..\HARDWARE\ADC -I ..\HARDWARE\TSensor -I ..\HARDWARE\IIC -I ..\HARDWARE\24CXX -I ..\HARDWARE\SPI -I ..\HARDWARE\FLASH -I ..\HARDWARE\TOUCH -I ..\HARDWARE\EXIT -I ..\HARDWARE\TIM-I.\RTE\_QD-TFT-I"D:\Program Files\KEIL\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"D:\Program Files\KEIL\Keil\STM32F1xx_DFP\2.3.0\Device\Include"-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f10x_it.o --omf_browse ..\obj\stm32f10x_it.crf --depend ..\obj\stm32f10x_it.d)
+F (..\USER\stm32f10x_it.c)(0x650EEE78)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\EXTI -I ..\HARDWARE\WDG -I ..\HARDWARE\TIMER -I ..\HARDWARE\PWM -I ..\HARDWARE\LCD -I ..\HARDWARE\WKUP -I ..\HARDWARE\ADC -I ..\HARDWARE\TSensor -I ..\HARDWARE\IIC -I ..\HARDWARE\24CXX -I ..\HARDWARE\SPI -I ..\HARDWARE\FLASH -I ..\HARDWARE\TOUCH -I ..\HARDWARE\EXIT -I ..\HARDWARE\TIM-I.\RTE\_QD-TFT-I"D:\Program Files\KEIL\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"D:\Program Files\KEIL\Keil\STM32F1xx_DFP\2.3.0\Device\Include"-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f10x_it.o --omf_browse ..\obj\stm32f10x_it.crf --depend ..\obj\stm32f10x_it.d)
 I (..\USER\stm32f10x_it.h)(0x4D99A426)
 I (..\USER\stm32f10x.h)(0x64F98934)
 I (..\CORE\core_cm3.h)(0x4D523B58)
@@ -136,7 +136,7 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_spi.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_tim.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
-F (..\USER\test.c)(0x6502C76D)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\EXTI -I ..\HARDWARE\WDG -I ..\HARDWARE\TIMER -I ..\HARDWARE\PWM -I ..\HARDWARE\LCD -I ..\HARDWARE\WKUP -I ..\HARDWARE\ADC -I ..\HARDWARE\TSensor -I ..\HARDWARE\IIC -I ..\HARDWARE\24CXX -I ..\HARDWARE\SPI -I ..\HARDWARE\FLASH -I ..\HARDWARE\TOUCH -I ..\HARDWARE\EXIT -I ..\HARDWARE\TIM-I.\RTE\_QD-TFT-I"D:\Program Files\KEIL\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"D:\Program Files\KEIL\Keil\STM32F1xx_DFP\2.3.0\Device\Include"-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\test.o --omf_browse ..\obj\test.crf --depend ..\obj\test.d)
+F (..\USER\test.c)(0x650EF2E9)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\EXTI -I ..\HARDWARE\WDG -I ..\HARDWARE\TIMER -I ..\HARDWARE\PWM -I ..\HARDWARE\LCD -I ..\HARDWARE\WKUP -I ..\HARDWARE\ADC -I ..\HARDWARE\TSensor -I ..\HARDWARE\IIC -I ..\HARDWARE\24CXX -I ..\HARDWARE\SPI -I ..\HARDWARE\FLASH -I ..\HARDWARE\TOUCH -I ..\HARDWARE\EXIT -I ..\HARDWARE\TIM-I.\RTE\_QD-TFT-I"D:\Program Files\KEIL\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"D:\Program Files\KEIL\Keil\STM32F1xx_DFP\2.3.0\Device\Include"-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\test.o --omf_browse ..\obj\test.crf --depend ..\obj\test.d)
 I (..\HARDWARE\LCD\lcd.h)(0x6502C477)
 I (..\SYSTEM\sys\sys.h)(0x5B6BE71E)
 I (..\USER\stm32f10x.h)(0x64F98934)
@@ -167,8 +167,8 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_tim.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
 I (D:\Program Files\KEIL\ARM\ARMCC\include\stdlib.h)(0x60252374)
-I (..\SYSTEM\delay\delay.h)(0x5F81C588)
-I (..\USER\gui.h)(0x6502C652)
+I (..\SYSTEM\delay\delay.h)(0x650F01E8)
+I (..\USER\gui.h)(0x650EF1EC)
 I (..\USER\test.h)(0x6502C223)
 I (..\HARDWARE\TOUCH\touch.h)(0x5F81C671)
 I (..\HARDWARE\KEY\key.h)(0x5F81C7AD)
@@ -204,7 +204,7 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_spi.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_tim.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
-I (..\SYSTEM\delay\delay.h)(0x5F81C588)
+I (..\SYSTEM\delay\delay.h)(0x650F01E8)
 F (..\HARDWARE\LCD\lcd.c)(0x6502C460)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\EXTI -I ..\HARDWARE\WDG -I ..\HARDWARE\TIMER -I ..\HARDWARE\PWM -I ..\HARDWARE\LCD -I ..\HARDWARE\WKUP -I ..\HARDWARE\ADC -I ..\HARDWARE\TSensor -I ..\HARDWARE\IIC -I ..\HARDWARE\24CXX -I ..\HARDWARE\SPI -I ..\HARDWARE\FLASH -I ..\HARDWARE\TOUCH -I ..\HARDWARE\EXIT -I ..\HARDWARE\TIM-I.\RTE\_QD-TFT-I"D:\Program Files\KEIL\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"D:\Program Files\KEIL\Keil\STM32F1xx_DFP\2.3.0\Device\Include"-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\lcd.o --omf_browse ..\obj\lcd.crf --depend ..\obj\lcd.d)
 I (..\HARDWARE\LCD\lcd.h)(0x6502C477)
 I (..\SYSTEM\sys\sys.h)(0x5B6BE71E)
@@ -236,7 +236,7 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_tim.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
 I (D:\Program Files\KEIL\ARM\ARMCC\include\stdlib.h)(0x60252374)
-I (..\SYSTEM\delay\delay.h)(0x5F81C588)
+I (..\SYSTEM\delay\delay.h)(0x650F01E8)
 I (..\HARDWARE\SPI\spi.h)(0x6501DC98)
 F (..\HARDWARE\24CXX\24cxx.c)(0x5F81C588)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\EXTI -I ..\HARDWARE\WDG -I ..\HARDWARE\TIMER -I ..\HARDWARE\PWM -I ..\HARDWARE\LCD -I ..\HARDWARE\WKUP -I ..\HARDWARE\ADC -I ..\HARDWARE\TSensor -I ..\HARDWARE\IIC -I ..\HARDWARE\24CXX -I ..\HARDWARE\SPI -I ..\HARDWARE\FLASH -I ..\HARDWARE\TOUCH -I ..\HARDWARE\EXIT -I ..\HARDWARE\TIM-I.\RTE\_QD-TFT-I"D:\Program Files\KEIL\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"D:\Program Files\KEIL\Keil\STM32F1xx_DFP\2.3.0\Device\Include"-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\24cxx.o --omf_browse ..\obj\24cxx.crf --depend ..\obj\24cxx.d)
 I (..\HARDWARE\24CXX\24cxx.h)(0x5F81C8F8)
@@ -269,7 +269,7 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_spi.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_tim.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
-I (..\SYSTEM\delay\delay.h)(0x5F81C588)
+I (..\SYSTEM\delay\delay.h)(0x650F01E8)
 F (..\HARDWARE\TOUCH\touch.c)(0x5F81C588)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\EXTI -I ..\HARDWARE\WDG -I ..\HARDWARE\TIMER -I ..\HARDWARE\PWM -I ..\HARDWARE\LCD -I ..\HARDWARE\WKUP -I ..\HARDWARE\ADC -I ..\HARDWARE\TSensor -I ..\HARDWARE\IIC -I ..\HARDWARE\24CXX -I ..\HARDWARE\SPI -I ..\HARDWARE\FLASH -I ..\HARDWARE\TOUCH -I ..\HARDWARE\EXIT -I ..\HARDWARE\TIM-I.\RTE\_QD-TFT-I"D:\Program Files\KEIL\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"D:\Program Files\KEIL\Keil\STM32F1xx_DFP\2.3.0\Device\Include"-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\touch.o --omf_browse ..\obj\touch.crf --depend ..\obj\touch.d)
 I (..\HARDWARE\TOUCH\touch.h)(0x5F81C671)
 I (..\SYSTEM\sys\sys.h)(0x5B6BE71E)
@@ -302,11 +302,11 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
 I (..\HARDWARE\LCD\lcd.h)(0x6502C477)
 I (D:\Program Files\KEIL\ARM\ARMCC\include\stdlib.h)(0x60252374)
-I (..\SYSTEM\delay\delay.h)(0x5F81C588)
+I (..\SYSTEM\delay\delay.h)(0x650F01E8)
 I (D:\Program Files\KEIL\ARM\ARMCC\include\math.h)(0x60252378)
 I (..\HARDWARE\24CXX\24cxx.h)(0x5F81C8F8)
 I (..\HARDWARE\IIC\myiic.h)(0x5F81C8F8)
-I (..\USER\gui.h)(0x6502C652)
+I (..\USER\gui.h)(0x650EF1EC)
 F (..\HARDWARE\SPI\SPI.c)(0x65027B0B)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\EXTI -I ..\HARDWARE\WDG -I ..\HARDWARE\TIMER -I ..\HARDWARE\PWM -I ..\HARDWARE\LCD -I ..\HARDWARE\WKUP -I ..\HARDWARE\ADC -I ..\HARDWARE\TSensor -I ..\HARDWARE\IIC -I ..\HARDWARE\24CXX -I ..\HARDWARE\SPI -I ..\HARDWARE\FLASH -I ..\HARDWARE\TOUCH -I ..\HARDWARE\EXIT -I ..\HARDWARE\TIM-I.\RTE\_QD-TFT-I"D:\Program Files\KEIL\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"D:\Program Files\KEIL\Keil\STM32F1xx_DFP\2.3.0\Device\Include"-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\spi.o --omf_browse ..\obj\spi.crf --depend ..\obj\spi.d)
 I (..\HARDWARE\SPI\spi.h)(0x6501DC98)
 I (..\SYSTEM\sys\sys.h)(0x5B6BE71E)
@@ -367,7 +367,7 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_spi.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_tim.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
-I (..\SYSTEM\delay\delay.h)(0x5F81C588)
+I (..\SYSTEM\delay\delay.h)(0x650F01E8)
 F (..\HARDWARE\LED\led.c)(0x64FDE0D8)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\EXTI -I ..\HARDWARE\WDG -I ..\HARDWARE\TIMER -I ..\HARDWARE\PWM -I ..\HARDWARE\LCD -I ..\HARDWARE\WKUP -I ..\HARDWARE\ADC -I ..\HARDWARE\TSensor -I ..\HARDWARE\IIC -I ..\HARDWARE\24CXX -I ..\HARDWARE\SPI -I ..\HARDWARE\FLASH -I ..\HARDWARE\TOUCH -I ..\HARDWARE\EXIT -I ..\HARDWARE\TIM-I.\RTE\_QD-TFT-I"D:\Program Files\KEIL\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"D:\Program Files\KEIL\Keil\STM32F1xx_DFP\2.3.0\Device\Include"-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\led.o --omf_browse ..\obj\led.crf --depend ..\obj\led.d)
 I (..\USER\stm32f10x.h)(0x64F98934)
 I (..\CORE\core_cm3.h)(0x4D523B58)
@@ -397,7 +397,7 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_tim.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
 I (..\HARDWARE\LED\led.h)(0x64FDE318)
-F (..\HARDWARE\EXIT\bsp_exti.c)(0x6501F66C)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\EXTI -I ..\HARDWARE\WDG -I ..\HARDWARE\TIMER -I ..\HARDWARE\PWM -I ..\HARDWARE\LCD -I ..\HARDWARE\WKUP -I ..\HARDWARE\ADC -I ..\HARDWARE\TSensor -I ..\HARDWARE\IIC -I ..\HARDWARE\24CXX -I ..\HARDWARE\SPI -I ..\HARDWARE\FLASH -I ..\HARDWARE\TOUCH -I ..\HARDWARE\EXIT -I ..\HARDWARE\TIM-I.\RTE\_QD-TFT-I"D:\Program Files\KEIL\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"D:\Program Files\KEIL\Keil\STM32F1xx_DFP\2.3.0\Device\Include"-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\bsp_exti.o --omf_browse ..\obj\bsp_exti.crf --depend ..\obj\bsp_exti.d)
+F (..\HARDWARE\EXIT\bsp_exti.c)(0x650EEFE3)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\EXTI -I ..\HARDWARE\WDG -I ..\HARDWARE\TIMER -I ..\HARDWARE\PWM -I ..\HARDWARE\LCD -I ..\HARDWARE\WKUP -I ..\HARDWARE\ADC -I ..\HARDWARE\TSensor -I ..\HARDWARE\IIC -I ..\HARDWARE\24CXX -I ..\HARDWARE\SPI -I ..\HARDWARE\FLASH -I ..\HARDWARE\TOUCH -I ..\HARDWARE\EXIT -I ..\HARDWARE\TIM-I.\RTE\_QD-TFT-I"D:\Program Files\KEIL\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"D:\Program Files\KEIL\Keil\STM32F1xx_DFP\2.3.0\Device\Include"-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\bsp_exti.o --omf_browse ..\obj\bsp_exti.crf --depend ..\obj\bsp_exti.d)
 I (..\HARDWARE\EXIT\bsp_exti.h)(0x6502C0F0)
 I (..\USER\stm32f10x.h)(0x64F98934)
 I (..\CORE\core_cm3.h)(0x4D523B58)
@@ -627,7 +627,7 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_spi.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
 F (..\SYSTEM\delay\delay.c)(0x5F81C588)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\EXTI -I ..\HARDWARE\WDG -I ..\HARDWARE\TIMER -I ..\HARDWARE\PWM -I ..\HARDWARE\LCD -I ..\HARDWARE\WKUP -I ..\HARDWARE\ADC -I ..\HARDWARE\TSensor -I ..\HARDWARE\IIC -I ..\HARDWARE\24CXX -I ..\HARDWARE\SPI -I ..\HARDWARE\FLASH -I ..\HARDWARE\TOUCH -I ..\HARDWARE\EXIT -I ..\HARDWARE\TIM-I.\RTE\_QD-TFT-I"D:\Program Files\KEIL\ARM\CMSIS\5.8.0\CMSIS\Core\Include"-I"D:\Program Files\KEIL\Keil\STM32F1xx_DFP\2.3.0\Device\Include"-D__UVISION_VERSION="527" -D_RTE_ -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\delay.o --omf_browse ..\obj\delay.crf --depend ..\obj\delay.d)
-I (..\SYSTEM\delay\delay.h)(0x5F81C588)
+I (..\SYSTEM\delay\delay.h)(0x650F01E8)
 I (..\USER\stm32f10x.h)(0x64F98934)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (D:\Program Files\KEIL\ARM\ARMCC\include\stdint.h)(0x6025237E)

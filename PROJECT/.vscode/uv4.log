@@ -1,0 +1,19 @@
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Program Files\KEIL\ARM\ARMCC\Bin'
+Build target 'QD-TFT'
+compiling GUI.c...
+..\SYSTEM\delay\delay.h(47): error:  #65: expected a ";"
+  void delay_init(u8 SYSCLK);
+..\USER\GUI.c(394): warning:  #223-D: function "Lcd_WriteData01_16Bit" declared implicitly
+  		        if(temp&0x01)Lcd_WriteData01_16Bit(fc); 
+..\USER\GUI.c(561): warning:  #223-D: function "Lcd_WriteData01_16Bit" declared implicitly
+  						else Lcd_WriteData01_16Bit(bc);
+..\USER\GUI.c(665): warning:  #223-D: function "Lcd_WriteData01_16Bit" declared implicitly
+  									if(tfont24[k].Msk[i]&(0x80>>j))	Lcd_WriteData01_16Bit(fc);
+..\USER\GUI.c(764): warning:  #223-D: function "Lcd_WriteData01_16Bit" declared implicitly
+  								if(tfont32[k].Msk[i]&(0x80>>j))	Lcd_WriteData01_16Bit(fc);
+..\USER\GUI.c(849): warning:  #223-D: function "Lcd_WriteData01_16Bit" declared implicitly
+  								if(tfont64[k].Msk[i]&(0x80>>j))	Lcd_WriteData01_16Bit(fc);
+..\USER\GUI.c: 5 warnings, 1 error
+"..\OBJ\TOUCH.axf" - 1 Error(s), 5 Warning(s).
+Target not created.
+Build Time Elapsed:  00:00:00

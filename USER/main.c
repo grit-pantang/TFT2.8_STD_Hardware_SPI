@@ -52,14 +52,14 @@ int main(void)
 {
     SystemInit();//初始化RCC 设置系统主频为72MHZ
     delay_init(72);	     //延时初始化
-    LCD_Init();	   //液晶屏02初始化
-    delay_ms(50);
+//    LCD_Init();	   //液晶屏02初始化
+//     delay_ms(50);
     LCD01_Init();	   //液晶屏01初始化
     LED_Init();
     EXTI_Key_Config();
     LCD01_Clear(BLACK);//屏幕01
     delay_ms(50);
-    LCD_Clear(BLACK);//屏幕02
+//    LCD_Clear(BLACK);//屏幕02
     GENERAL_TIM_Init();
     //循环测试
     while(1)
@@ -79,13 +79,13 @@ int main(void)
 //		Touch_Test();		//触摸屏手写测试
 
 				//TFT-SPI2
-        if(time >= 5000)    /* 5000 * 1 ms = 1s 时间到 */
-        {
-            time = 0;
-            /* LED1 取反 */
-            LCD_Clear(BLACK);
-            TIM_Cmd(GENERAL_TIM, DISABLE);
-        }
+//        if(time >= 5000)    /* 5000 * 1 ms = 1s 时间到 */
+//        {
+//            time = 0;
+//            /* LED1 取反 */
+//            LCD_Clear(BLACK);
+//            TIM_Cmd(GENERAL_TIM, DISABLE);
+//        }
 				//TFT01-SPI1
         if(time01 >= 5000)    /* 5000 * 1 ms = 1s 时间到 */
         {

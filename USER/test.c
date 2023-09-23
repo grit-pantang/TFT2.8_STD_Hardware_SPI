@@ -226,7 +226,9 @@ void Chinese_Font_test01(void)
 //	Show_Str(10,50,BLUE,YELLOW,"16X16:LiangHaoCai",16,0);
 //	Show_Str(10,70,BLUE,YELLOW,"24X24:广州市中文测试",24,1);
 //	Show_Str(10,100,BLUE,YELLOW,"32X32:字体测试",32,1);
-	Show_Str01(10,100,BLUE,YELLOW,"PB7-01交叉路口注意安全",32,1);
+
+	// Show_Str01(10,100,RED,BLACK,"PB7-01交叉路口注意安全",32,1);
+    Show_Str01(10,100,RED,BLACK,"交",64,1);
 	delay_ms(1200);
 }
 

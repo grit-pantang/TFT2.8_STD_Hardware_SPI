@@ -56,6 +56,7 @@ void GUI_DrawFont32(u16 x, u16 y, u16 fc, u16 bc, u8 *s,u8 mode);
 void GUI01_DrawFont16(u16 x, u16 y, u16 fc, u16 bc, u8 *s,u8 mode);
 void GUI01_DrawFont24(u16 x, u16 y, u16 fc, u16 bc, u8 *s,u8 mode);
 void GUI01_DrawFont32(u16 x, u16 y, u16 fc, u16 bc, u8 *s,u8 mode);
+void GUI01_DrawFont64(u16 x, u16 y, u16 fc, u16 bc, u8 *s,u8 mode);
 
 void Show_Str(u16 x, u16 y, u16 fc, u16 bc, u8 *str,u8 size,u8 mode);
 void Show_Str01(u16 x, u16 y, u16 fc, u16 bc, u8 *str,u8 size,u8 mode);
