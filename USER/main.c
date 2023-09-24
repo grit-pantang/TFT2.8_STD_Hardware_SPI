@@ -33,7 +33,7 @@
  * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
  * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
  * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
-**************************************************************************************************/
+ **************************************************************************************************/
 #include "delay.h"
 #include "sys.h"
 #include "lcd.h"
@@ -44,50 +44,49 @@
 #include "led.h"
 #include "bsp_GeneralTim.h"
 
-
-uint32_t time = 0; // ms 计时变量
+uint32_t time = 0;   // ms 计时变量
 uint32_t time01 = 0; // ms 计时变量
 
 int main(void)
 {
-    SystemInit();//初始化RCC 设置系统主频为72MHZ
-    delay_init(72);	     //延时初始化
-//    LCD_Init();	   //液晶屏02初始化
-//     delay_ms(50);
-    LCD01_Init();	   //液晶屏01初始化
+    SystemInit();   // 初始化RCC 设置系统主频为72MHZ
+    delay_init(72); // 延时初始化
+    //    LCD_Init();	   //液晶屏02初始化
+    //     delay_ms(50);
+    LCD01_Init(); // 液晶屏01初始化
     LED_Init();
     EXTI_Key_Config();
-    LCD01_Clear(BLACK);//屏幕01
+    LCD01_Clear(BLACK); // 屏幕01
     delay_ms(50);
-//    LCD_Clear(BLACK);//屏幕02
+    //    LCD_Clear(BLACK);//屏幕02
     GENERAL_TIM_Init();
-    //循环测试
-    while(1)
+    // 循环测试
+    while (1)
     {
-//		main_test(); 		//测试主界面
-//		Test_Color();  		//简单刷屏填充测试
-//		Test_FillRec();		//GUI矩形绘图测试
-//		Test_Circle(); 		//GUI画圆测试
-//		Test_Triangle();    //GUI三角形绘图测试
-//		English_Font_test();//英文字体示例测试
+        //		main_test(); 		//测试主界面
+        //		Test_Color();  		//简单刷屏填充测试
+        //		Test_FillRec();		//GUI矩形绘图测试
+        //		Test_Circle(); 		//GUI画圆测试
+        //		Test_Triangle();    //GUI三角形绘图测试
+        //		English_Font_test();//英文字体示例测试
 
-//		Chinese_Font_test();//中文字体示例测试
+        //		Chinese_Font_test();//中文字体示例测试
 
-//		Pic_test();			//图片显示示例测试
-//		Rotate_Test();   //旋转显示测试
-        //如果不带触摸，或者不需要触摸功能，请注释掉下面触摸屏测试项
-//		Touch_Test();		//触摸屏手写测试
+        //		Pic_test();			//图片显示示例测试
+        //		Rotate_Test();   //旋转显示测试
+        // 如果不带触摸，或者不需要触摸功能，请注释掉下面触摸屏测试项
+        //		Touch_Test();		//触摸屏手写测试
 
-				//TFT-SPI2
-//        if(time >= 5000)    /* 5000 * 1 ms = 1s 时间到 */
-//        {
-//            time = 0;
-//            /* LED1 取反 */
-//            LCD_Clear(BLACK);
-//            TIM_Cmd(GENERAL_TIM, DISABLE);
-//        }
-				//TFT01-SPI1
-        if(time01 >= 5000)    /* 5000 * 1 ms = 1s 时间到 */
+        // TFT-SPI2
+        //        if(time >= 5000)    /* 5000 * 1 ms = 1s 时间到 */
+        //        {
+        //            time = 0;
+        //            /* LED1 取反 */
+        //            LCD_Clear(BLACK);
+        //            TIM_Cmd(GENERAL_TIM, DISABLE);
+        //        }
+        // TFT01-SPI1
+        if (time01 >= 5000) /* 5000 * 1 ms = 1s 时间到 */
         {
             time01 = 0;
             /* LED1 取反 */
@@ -96,4 +95,3 @@ int main(void)
         }
     }
 }
-
