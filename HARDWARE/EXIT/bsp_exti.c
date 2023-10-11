@@ -67,7 +67,7 @@ void EXTI_Key_Config(void)
   GPIO_InitStructure.GPIO_Pin = EXTI01_INT_GPIO_PIN;
   /* 配置为浮空输入 */	
 //  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;//之前是IPD
   GPIO_Init(EXTI01_INT_GPIO_PORT, &GPIO_InitStructure);
 
 	/* 选择EXTI的信号源 */
